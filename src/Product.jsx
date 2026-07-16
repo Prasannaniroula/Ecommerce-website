@@ -1,7 +1,10 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import AddToCart from './AddToCart'
+import { addItem, removeItem, clearCart } from './RTK/slice'
 
 export default function Product() {
-
+    const dispatch = useDispatch()
   return (
    <>
    
@@ -11,7 +14,13 @@ export default function Product() {
 
     <h1>Our Products</h1>
 
+    <button className='remove' onClick={()=>dispatch(clearCart(1))}>
+                <i className="fa-solid fa-cart-shopping"></i>
+                Clear cart
+            </button>
+
     <div className="product-container">
+  
 
         <div className="product-card">
             <img src="https://www.neostore.com.np/assets/uploads/Neone_Products-3053.JPG" alt="Product"/>
@@ -24,9 +33,13 @@ export default function Product() {
 
             <p className="price">$49.99</p>
 
-            <button onClick={()=>console.log("click")}>
+            <button onClick={()=>dispatch(addItem(1))}>
                 <i className="fa-solid fa-cart-shopping"></i>
                 Add to Cart
+            </button>
+            <button className='remove' onClick={()=>dispatch(removeItem(1))}>
+                <i className="fa-solid fa-cart-shopping"></i>
+                Remove from cart
             </button>
         </div>
 
@@ -41,9 +54,13 @@ export default function Product() {
 
             <p className="price">$79.99</p>
 
-            <button onClick={()=>console.log("click")}>
+            <button onClick={()=>dispatch(addItem(1))}>
                 <i className="fa-solid fa-cart-shopping"></i>
                 Add to Cart
+            </button>
+            <button className='remove' onClick={()=>dispatch(removeItem(1))}>
+                <i className="fa-solid fa-cart-shopping"></i>
+                Remove from cart
             </button>
         </div>
 
@@ -58,9 +75,13 @@ export default function Product() {
 
             <p className="price">$59.99</p>
 
-            <button onClick={()=>console.log("click")}>
+            <button onClick={()=>dispatch(addItem(1))}>
                 <i className="fa-solid fa-cart-shopping"></i>
                 Add to Cart
+            </button>
+            <button className='remove' onClick={()=>dispatch(removeItem(1))}>
+                <i className="fa-solid fa-cart-shopping"></i>
+                Remove from cart
             </button>
         </div>
 
@@ -75,9 +96,13 @@ export default function Product() {
 
             <p className="price">$29.99</p>
 
-            <button onClick={()=>console.log("click")}>
+            <button onClick={()=>dispatch(addItem(1))}>
                 <i className="fa-solid fa-cart-shopping"></i>
                 Add to Cart
+            </button>
+            <button className='remove' onClick={()=>dispatch(removeItem(1))}>
+                <i className="fa-solid fa-cart-shopping"></i>
+                Remove from cart
             </button>
         </div>
 
