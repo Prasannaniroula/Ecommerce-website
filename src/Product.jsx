@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import AddToCart from './AddToCart'
 import { addItem, removeItem, clearCart } from './RTK/slice'
+import {fetchProducts} from './RTK/productSlice'
 
 export default function Product() {
     const dispatch = useDispatch()
+    useEffect(()=>{
+        dispatch(fetchProducts)
+    },[])
   return (
    <>
    
@@ -14,7 +18,7 @@ export default function Product() {
 
     <h1>Our Products</h1>
 
-    <button className='remove' onClick={()=>dispatch(clearCart(1))}>
+    <button className='remove' onClick={()=>dispatch(clearCart())}>
                 <i className="fa-solid fa-cart-shopping"></i>
                 Clear cart
             </button>
