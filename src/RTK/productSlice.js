@@ -19,7 +19,7 @@ const productSlice= createSlice({
     extraReducers:(builder)=>{
         builder.addCase(fetchProducts.fulfilled,(state,action)=>{
             state.status= 'succeeded',
-            state.items = actions.items
+            state.items = action.payload
         })
     }
 })
