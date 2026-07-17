@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { use, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import AddToCart from "./AddToCart";
 import { addItem, removeItem, clearCart } from "./RTK/slice";
@@ -11,6 +11,10 @@ export default function Product() {
   }, []);
   const productlist = useSelector((state) => state.products.items);
   console.log(productlist);
+
+  const cartSelector = useSelector((state)=>state.cart.items);
+  console.log(cartSelector)
+
   return (
     <>
       <div className="grid">
@@ -25,9 +29,16 @@ export default function Product() {
                 <div className="Price">${item.price}</div>
                 <div className="Available">{item.availabilityStatus}</div>
               </div>
-              <button onClick={() => dispatch(addItem(item))}>
-                Add to Cart
-              </button>
+              {
+                cartSelector.find(cartItem=> cartItem.id === item.id)? 
+                <button className="btn">Added in Cart</button>
+
+                : 
+
+                <button onClick={() => dispatch(addItem(item))}> Add to Cart </button>
+              
+              }
+              
             </div>
           ))}
       </div>

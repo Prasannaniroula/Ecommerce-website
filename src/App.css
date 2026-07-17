@@ -113,9 +113,10 @@ button {
     transition: 0.3s;
     bottom:0;
 }
+button.btn{
+    pointer-events: none;
+    background-color: gainsboro;
 
-button:hover {
-    background: #3730a3;
 }
 
 /* Responsive */
