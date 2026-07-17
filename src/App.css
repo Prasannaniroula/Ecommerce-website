@@ -114,9 +114,11 @@ button {
     bottom:0;
 }
 button.btn{
-    pointer-events: none;
-    background-color: gainsboro;
+   background-color: #e63946;
 
+}
+button.btn:hover{
+    background-color: #af2631;
 }
 
 /* Responsive */

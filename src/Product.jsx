@@ -31,7 +31,7 @@ export default function Product() {
               </div>
               {
                 cartSelector.find(cartItem=> cartItem.id === item.id)? 
-                <button className="btn">Added in Cart</button>
+                <button onClick={()=>dispatch(removeItem(item))} className="btn">Remove from Cart</button>
 
                 : 
 
