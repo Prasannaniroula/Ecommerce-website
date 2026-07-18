@@ -13,3 +13,5 @@ While creating these functionalities i have got to know three main predefined fu
   - For calling an API using redux we use createAsyncThunk() functions 
   - We create extraReducers when we are handling the asynchronous actions or data and while responding to actons from another slice.
   
+  ## ScreenShot of the Home page 
+  <img src="./public/ShopEase.png">
